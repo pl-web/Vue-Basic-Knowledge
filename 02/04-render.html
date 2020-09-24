@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- <input type="text" v-bind:value="inpVal" v-on:input="enterEditor">
+    <p>{{inpVal}}</p> -->
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          inpVal: ''
+        }
+      },
+      methods: {
+        enterEditor(e) {
+          this.inpVal = e.target.value
+        }
+      },
+      // render function
+      render() {
+        with (this) { return _c('div', { attrs: { "id": "app" } }, [_c('input', { attrs: { "type": "text" }, domProps: { "value": inpVal }, on: { "input": enterEditor } }), _v(" "), _c('p', [_v(_s(inpVal))])]) }
+      }
+    })
+    // print app
+    console.dir(app)
+    // options
+    console.log(app.$options.render)
+    // render function
+    // (function anonymous(
+    // ) {
+    // with(this){return _c('div',{attrs:{"id":"app"}},[_c('input',{attrs:{"type":"text"},domProps:{"value":inpVal},on:{"input":enterEditor}}),_v(" "),_c('p',[_v(_s(inpVal))])])}
+    // })
+  </script>
+</body>
+
+</html>
