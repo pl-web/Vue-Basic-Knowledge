@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app" :title="title" v-html="title">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    // vue instance
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          title: 'Hello World! && Hello Vue!'
+        }
+      },
+    })
+    // setTimeout
+    setTimeout(() => {
+      app.title = 'Hello World'
+      console.log("app", app)
+    }, 3000)
+  </script>
+</body>
+</html>
