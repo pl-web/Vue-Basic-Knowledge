@@ -6,13 +6,13 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app" :title="title" v-html="title">
+  <div id="vuedemo" :title="title" v-html="title">
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     // vue instance
-    new Vue({
-      el: '#app',
+    const app = new Vue({
+      el: '#vuedemo',
       data() {
         return {
           title: 'Hello World! && Hello Vue!'
