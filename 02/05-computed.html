@@ -7,8 +7,11 @@
 </head>
 <body>
   <div id="app">
-    <div id="box" v-bind:style="background: boxBgc">变个颜色呗</div>
+    <div id="box" v-bind:style="{color: boxBgc}">变个颜色呗</div>
     <button v-on:click="changeBoxBGC">按钮</button>
+    <input type="text" v-bind:value="inpVal">
+    <button v-on:click="addArrLength">添加数组的长度</button>
+    <span>{{newArrLength}}</span>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
@@ -16,7 +19,10 @@
       el: '#app',
       data() {
         return {
-          isChangeBGC = false
+          isChangeBGC = false,
+          newArr = [1,2,3],
+          newArrLength = 0,
+          inpVal = ''
         }
       },
       computed: {
@@ -28,6 +34,18 @@
         changeBoxBGC() {
           this.isChangeBGC = !this.isChangeBGC
           console.log(this.isChangeBGC)
+        },
+        addArrLength() {
+          this.newArr.push(this.inpVal)
+        }
+      },
+      watch: {
+        newArr: {
+          immediate: true,
+          deep: true,
+          handler(newVal, oldVal) {
+            this.newArrLength = newVal.length
+          }
         }
       }
     })
