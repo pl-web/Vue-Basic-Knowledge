@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div id="box" v-bind:style="background: boxBgc">变个颜色呗</div>
+    <button v-on:click="changeBoxBGC">按钮</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          isChangeBGC = false
+        }
+      },
+      computed: {
+        boxBgc() {
+          return this.isChangeBGC === true ? "#1aa" : "#f77"
+        }
+      },
+      methods: {
+        changeBoxBGC() {
+          this.isChangeBGC = !this.isChangeBGC
+          console.log(this.isChangeBGC)
+        }
+      }
+    })
+  </script>
+</body>
+</html>
