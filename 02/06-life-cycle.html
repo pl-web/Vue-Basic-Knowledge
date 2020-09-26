@@ -7,7 +7,7 @@
 </head>
 <body>
   <div id="app">
-
+    {{my_data}}
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
@@ -22,11 +22,13 @@
       el: '#app',
       data() {
         return {
-
+          my_data: []
         }
       },
-      created() {
-
+      // async getData() {}
+      async created() {
+        const myObject = await getData()
+        this.my_data.push(myObject)
       },
       mounted() {
         
